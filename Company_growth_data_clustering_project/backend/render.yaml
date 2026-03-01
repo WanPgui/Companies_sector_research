@@ -4,10 +4,10 @@ services:
     env: python
     plan: free
     buildCommand: |
-      cd backend
+      cd Company_growth_data_clustering_project/backend
       pip install -r requirements.txt
     startCommand: |
-      cd backend
+      cd Company_growth_data_clustering_project/backend
       gunicorn app:app
     envVars:
       - key: FLASK_ENV
