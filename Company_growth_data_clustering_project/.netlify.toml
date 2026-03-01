@@ -1,9 +1,10 @@
 # .netlify.toml
+
 [build]
   # Directory where dependencies are installed and build runs
   base = "Company_growth_data_clustering_project/frontend"
 
-  # Command to build the React app
+  # Command to install dependencies and build React app
   command = "npm install && npm run build"
 
   # Directory to publish after build
@@ -12,7 +13,7 @@
   # Directory for Netlify Functions (if any)
   functions = "Company_growth_data_clustering_project/frontend/netlify/functions"
 
-# Set environment variables for React
+# Environment variables for React
 [context.production.environment]
   REACT_APP_API_URL = "https://companies-sector-research.onrender.com"
 
