@@ -1,230 +1,168 @@
-# Companies_sector_research
-Company Growth Prediction Project
-Table of Contents
+#  Companies Sector Research: Company Growth Prediction Project
 
-Project Overview
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![React](https://img.shields.io/badge/React-18+-61DAFB?logo=react&logoColor=white)
+![Render](https://img.shields.io/badge/Backend-Render-green)
+![Netlify](https://img.shields.io/badge/Frontend-Netlify-success)
 
-Features
+---
 
-System Requirements
+## Table of Contents
+1. Project Overview
+2. Features & Models
+3. System Requirements
+4. Installation and Setup
+5. Usage
+6. Testing Strategies
+7. Demonstration & Screenshots
+8. Deployment Links
+9. Analysis
+10. Discussion
+11. Recommendations & Future Work
 
-Installation and Setup
+---
 
-Usage
+## Project Overview
+The Company Growth Prediction application predicts the growth trajectory of companies based on multiple features:
 
-Testing Strategies
+- Industry
+- Country
+- Company age
+- Employee metrics
 
-Demonstration & Screenshots
+It leverages machine learning models (Random Forest, XGBoost) for clustering  similar companies and growth-level predictions. Users can track prediction history and visualize insights through interactive charts to predict sector performances.
 
-Deployment Links
+Deployment Highlights:
+- Backend API deployed on Render
+- Frontend React app deployed on Netlify
 
-Analysis
+---
 
-Discussion
+## Features & Models
 
-Recommendations & Future Work
+| Feature | Description | Model Options |
+|---------|-------------|---------------|
+| Growth Prediction | Predicts the growth cluster of a company | Auto-select best model, or choose manually |
+| Input Sliders & Dropdowns | Interactive UI for entering company features | N/A |
+| History Tracking | View historical predictions in charts | N/A |
+| Debug Info | Inspect API requests and responses | N/A |
+| ML Models | Ensemble learning for accurate predictions | Random Forest, XGBoost (future: LightGBM, CatBoost) |
 
-Project Overview
+---
 
-The Company Growth Prediction application predicts the growth trajectory of companies based on multiple features such as industry, country, company age, and employee metrics.
+## System Requirements
+Backend: Python 3.10+, Flask, scikit-learn, XGBoost, LightGBM, CatBoost  
+Frontend: Node.js 18+, npm 9+, React 18+  
+Browser Compatibility: Chrome, Firefox, Safari
 
-It leverages machine learning models (Random Forest, XGBoost) for clustering and growth-level predictions. The app tracks prediction history and displays visual insights through interactive charts.
+---
 
-This project demonstrates full-stack deployment with:
+## Installation and Setup
 
-Backend API deployed on Render
-
-Frontend React app deployed on Netlify
-
-Features
-
-Predict company growth cluster and confidence
-
-Auto-select the best performing model or manually choose a model
-
-Input features via interactive sliders and dropdowns
-
-View historical predictions in charts
-
-Debug info to verify API requests/responses
-
-System Requirements
-
-Backend: Python 3.10+, Flask, scikit-learn, XGBoost, LightGBM, CatBoost
-
-Frontend: Node.js 18+, npm 9+, React 18+
-
-Browser compatible: Chrome, Firefox, Safari
-
-Installation and Setup
-Backend (Render)
-
-Clone the repository:
-
-git clone https://github.com/WanPgui/Companies_sector_research.git
-cd Companies_sector_research/Company_growth_data_clustering_project
+### Backend (Render)
+Clone the repository and navigate to project:
+git clone https://github.com/WanPgui/Companies_sector_research.git  
+cd Companies_sector_research/Company_growth_data_clustering_project  
 
 Create and activate a virtual environment:
+python -m venv venv  
+# Linux / Mac  
+source venv/bin/activate  
+# Windows  
+venv\Scripts\activate  
 
-python -m venv venv
-source venv/bin/activate   # Linux/Mac
-venv\Scripts\activate      # Windows
-
-Install Python dependencies:
-
-pip install -r requirements.txt
+Install dependencies:
+pip install -r requirements.txt  
 
 Run the backend API:
+python app.py  
 
-python app.py
+Test API Endpoints:
+- GET / → {"routes":["/predict","/template","/health"],"status":"API Running"}  
+- POST /predict → Accepts JSON payload, returns cluster, prediction, confidence  
 
-Test API endpoints in browser or Postman:
-
-GET / → Returns {"routes":["/predict","/template","/health"],"status":"API Running"}
-
-POST /predict → Accepts JSON payload, returns cluster, prediction, confidence
-
-Frontend (React / Netlify)
-
+### Frontend (React / Netlify)
 Navigate to frontend directory:
+cd frontend  
 
-cd frontend
-
-Install Node dependencies:
-
-npm install
+Install dependencies:
+npm install  
 
 Run locally (optional):
+npm start  
 
-npm start
-
-Build frontend for deployment:
-
-npm run build
+Build for deployment:
+npm run build  
 
 Deploy to Netlify:
+- Link repository to Netlify  
+- Ensure .netlify.toml configured  
+- Set environment variable: REACT_APP_API_URL=https://companies-sector-research.onrender.com  
 
-Link to repo
+---
 
-Ensure .netlify.toml is configured
+## Usage
+1. Open the deployed frontend  
+2. Select Industry and Country  
+3. Adjust sliders for: Company Age, Average Size, Current Employees, Total Employees  
+4. Choose Model Type or leave as Auto  
+5. Click Run Prediction  
+6. Observe: Prediction cluster, confidence, model used, history chart updates  
 
-Confirm environment variable:
+---
 
-REACT_APP_API_URL=https://companies-sector-research.onrender.com
-Usage
+## Testing Strategies
+- Unit/Component Testing: Test dropdowns, sliders, prediction cards  
+- Integration Testing: Input → API → Result → Chart  
+- Boundary/Edge Values: Extreme company ages and employee sizes  
+- Performance Testing: Verified API latency < 1 second across devices  
 
-Open the deployed frontend (Netlify link below)
+---
 
-Select Industry, Country
+## Demonstration & Screenshots
+- Prediction results: cluster, confidence, model  
+- History chart after multiple predictions  
+- Debug info JSON requests/responses  
+- Video demo (5 min) showing: flow, model selection, edge case handling, history chart  
 
-Adjust sliders for:
+(Insert screenshots/video links here)  
 
-Company Age
+---
 
-Average Size
+## Deployment Links
+- Backend API (Render): https://companies-sector-research.onrender.com  
+- Frontend App (Netlify): https://https://companies-sector-research-app.netlify.app 
 
-Current Employees
+---
 
-Total Employees
+## Analysis
+- Predictions align with expected growth patterns  
+- Confidence reflects model certainty across industries  
+- Extreme values may slightly lower confidence  
+- Project objectives achieved: interactive prediction, multiple models, history tracking, chart visualization  
 
-Choose Model Type or leave as Auto
+---
 
-Click Run Prediction
-
-Observe:
-
-Prediction cluster and confidence
-
-Model used
-
-History chart updates
-
-Testing Strategies
-
-Unit / Component Testing
-
-Tested individual frontend components: dropdowns, sliders, prediction cards
-
-Integration Testing
-
-End-to-end test from input → API → result → chart update
-
-Boundary / Edge Value Testing
-
-Extreme values for company age, employee size, and total employees
-
-Performance Testing
-
-Tested app on low-end laptop, standard desktop, and mobile browser
-
-Verified API latency < 1 second for predictions
-
-Demonstration & Screenshots
-
-Screenshot of prediction result with cluster, confidence, and model
-
-Screenshot of history chart updating after multiple predictions
-
-Screenshot of debug info showing request and response JSON
-
-Video demo (5 minutes) demonstrating:
-
-Prediction flow
-
-Model auto-selection
-
-Edge case testing
-
-History chart
-
-(Insert screenshots/video links here)
-
-Deployment Links
-
-Backend API (Render): https://companies-sector-research.onrender.com
-
-Frontend App (Netlify): https://your-netlify-link.netlify.app
-
-Analysis
-
-Predictions are consistent with expected growth patterns for test inputs
-
-Confidence values reflect model certainty across different industries and employee sizes
-
-Some edge cases (extremely small or large values) may produce slightly lower confidence due to clustering behavior
-
-Objectives from the project proposal are fully achieved: interactive prediction, multiple model support, history tracking, chart visualization
-
-Discussion
-
+## Discussion
 Milestones Achieved:
-
-Full-stack deployment of backend API and React frontend
-
-Integration of multiple ML models with dynamic selection
-
-Visual presentation of prediction history
+- Full-stack backend and React frontend deployment  
+- Multiple ML models with dynamic selection  
+- Visual presentation of prediction history  
 
 Impact:
+- Provides quick, data-driven insights on company growth potential  
+- Supports decision-making for investors, analysts, and researchers  
 
-Provides quick, data-driven insights on company growth potential
+---
 
-Supports decision-making for investors, analysts, and researchers
-
-Recommendations & Future Work
-
+## Recommendations & Future Work
 Community Recommendations:
-
-Use for research, sector analysis, and company evaluation
-
-Can be integrated with additional data sources for improved predictions
+- Use for research, sector analysis, and company evaluation  
+- Integrate additional data sources for improved predictions  
 
 Future Work:
+- Mobile-optimized UI  
+- Multi-language support   
+- Continuous retraining with live data
 
-Mobile-optimized UI
 
-Multi-language support
-
-Add more ML models (LightGBM, CatBoost)
-
-Continuous retraining with live data
