@@ -246,7 +246,30 @@ Link to the document for further analysis; https://docs.google.com/document/d/1F
 Milestones Achieved:
 - Full-stack backend and React frontend deployment  
 - Multiple ML models with dynamic selection  
-- Visual presentation of prediction history  
+- Visual presentation of prediction history
+
+ This project aimed to create a system that would forecast the company's growth using machine learning models and compare the performance of various algorithms. This was accomplished according to the results received.
+
+Interestingly, the comparison between random forest and XGBoost shows that ensemble learning techniques are highly efficient for structured business data. In this instance, it was a bit superior to random Forest and this is mainly due to the fact that random forest is resistant to noise, it can handle large data sets, and it lowers overfitting by averaging several decision trees.
+
+Even though XGBoost is commonly believed to have better results in most machine learning problems, the hyperparameters have to be more carefully tuned. Random Forest was more suitable and stable in this project and corresponded to the nature of the dataset.
+
+Another critical real-life experience identified by the results is that the growth of the companies has an incredibly strong correlation with the increase in the workforce. Organizations that are expanding the number of workers are likely to realize greater growth. This is in line with real business dynamics in which, in most cases, expansion of operations necessitates an increase in the number of employees.
+
+The next important point is that the data is highly voluminous as it consists of millions of records on companies. Due to this reason, model training and assessment were conducted on a sampled dataset to enhance the efficiency of the calculation and ensure reliable results.
+
+System-wise, the application that is developed has been successful in combining machine learning with a full-stack web system. The model predictions are revealed in the form of an API to the back end, and the front-end application lets the user input the company attributes and gives real-time predictions as well as visualizes results.
+
+This renders the system applicable in:
+
+Business analysts
+Investors
+Scholars in the field of company development.
+Strategic planning and forecasting.
+
+On the whole, the project indicates that machine learning can be used to process real-world business data and produce meaningful insights and predictive analytics.
+
+
 
 Impact:
 - Provides quick, data-driven insights on company growth potential  
