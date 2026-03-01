@@ -112,10 +112,88 @@ Deploy to Netlify:
 ---
 
 ## Testing Strategies
-- Unit/Component Testing: Test dropdowns, sliders, prediction cards  
-- Integration Testing: Input → API → Result → Chart  
-- Boundary/Edge Values: Extreme company ages and employee sizes  
-- Performance Testing: Verified API latency < 1 second across devices  
+# Testing Steps for Company Growth Prediction Project
+
+1. Backend Testing (API)
+
+Start the backend API
+
+cd Companies_sector_research/Company_growth_data_clustering_project
+source venv/bin/activate   # Linux/Mac
+venv\Scripts\activate      # Windows
+python app.py
+
+Ensure it says something like: API Running
+
+Check API routes
+
+Open a browser or Postman
+
+Test GET / → should return:
+
+{"routes":["/predict","/template","/health"],"status":"API Running"}
+
+Test the predict endpoint
+
+Endpoint: POST /predict
+
+Example JSON payload:
+
+{
+  "industry": "Technology",
+  "country": "Kenya",
+  "company_age": 5,
+  "avg_size": 50,
+  "current_employees": 45,
+  "total_employees": 60,
+  "model_type": "Auto"
+}
+
+Expected response: cluster, prediction, confidence, and model used
+
+Confirm API handles edge values (e.g., very small or very large numbers)
+
+Check debug info
+
+Verify request/response JSON shows correct mapping for input → output
+
+Ensure there are no errors in console
+
+2. Frontend Testing (React)
+
+Start the frontend locally
+
+cd frontend
+npm install
+npm start
+
+Open browser at http://localhost:3000
+
+Test UI components
+
+Check sliders, dropdowns, and input fields
+
+Confirm auto and manual model selection work
+
+Run predictions
+
+Fill inputs and click Run Prediction
+
+Observe:
+
+Predicted cluster
+
+Confidence value
+
+Model used
+
+History chart updates
+
+Check responsiveness
+
+Resize browser to mobile and tablet sizes
+
+Verify charts and sliders adjust correctly
 
 ---
 
