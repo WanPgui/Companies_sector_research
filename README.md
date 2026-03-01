@@ -219,8 +219,7 @@ npm start
 
 ## Deployment Links
 - Backend API (Render): https://companies-sector-research.onrender.com  
-- Frontend App (Netlify): https://https://companies-sector-research-app.netlify.app 
-
+- Frontend App (Netlify): https://companies-sector-research-app.netlify.app
 ---
 
 ## Analysis
