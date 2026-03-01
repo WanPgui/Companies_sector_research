@@ -22,6 +22,9 @@
 
 ---
 
+## Link to demo video; https://drive.google.com/drive/folders/1D1Dof7iyBkeCpdZoWuEurGkT4evuKkIo?usp=sharing
+
+
 ## Project Overview
 The Company Growth Prediction application predicts the growth trajectory of companies based on multiple features:
 
@@ -123,6 +126,11 @@ source venv/bin/activate   # Linux/Mac
 venv\Scripts\activate      # Windows  
 python app.py  
 
+
+**Start the Backend Locally**
+cd frontend  
+npm install  
+npm start  
 - Ensure the console displays: API Running or the local browser:http://localhost:5000 shows that "Backend is running!".
 **Check API Routes**
 - Open a browser or Postman  
@@ -210,9 +218,14 @@ npm start
 - Prediction results: cluster, confidence, model  
 - History chart after multiple predictions  
 - Debug info JSON requests/responses  
-- Video demo (5 min) showing: flow, model selection, edge case handling, history chart  
+- Video demo (5 min) showing: flow, model selection, edge case handling, history chart
+  
+Link to demo video- https://drive.google.com/drive/folders/1D1Dof7iyBkeCpdZoWuEurGkT4evuKkIo?usp=drive_link
 
-(link to related files: https://github.com/WanPgui/Companies_sector_research/tree/main/Files)  
+
+(link to other related files with screenshots and graphs: https://github.com/WanPgui/Companies_sector_research/tree/main/Files)  
+
+Link to the document for further analysis; https://docs.google.com/document/d/1FyGAE_pZvPNrI3Ia3kf9BCSbKmb4VWiyY7VK8NtN5BE/edit?usp=sharing
 
 ---
 
