@@ -114,90 +114,100 @@ Deploy to Netlify:
 ## Testing Strategies
 # Testing Steps for Company Growth Prediction Project
 
-1. Backend Testing (API)
 
-Start the backend API
+## 1. Backend Testing (API)
 
-cd Companies_sector_research/Company_growth_data_clustering_project
-source venv/bin/activate   # Linux/Mac
-venv\Scripts\activate      # Windows
-python app.py
+**Start the Backend API**
+cd Companies_sector_research/Company_growth_data_clustering_project  
+source venv/bin/activate   # Linux/Mac  
+venv\Scripts\activate      # Windows  
+python app.py  
 
-Ensure it says something like: API Running
+- Ensure the console displays: API Running
 
-Check API routes
+**Check API Routes**
+- Open a browser or Postman  
+- Test GET `/` → should return: {"routes":["/predict","/template","/health"],"status":"API Running"}
 
-Open a browser or Postman
+**Test the Predict Endpoint**
+- Endpoint: POST `/predict`  
+- Example JSON payload:  
+{"industry": "Technology","country": "Kenya","company_age": 5,"avg_size": 50,"current_employees": 45,"total_employees": 60,"model_type": "Auto"}  
 
-Test GET / → should return:
+- Expected response: cluster, prediction, confidence, and model used  
+- Confirm API handles edge values (very small or very large numbers)
 
-{"routes":["/predict","/template","/health"],"status":"API Running"}
+**Check Debug Info**
+- Verify request/response JSON shows correct mapping from input → output  
+- Ensure there are no console errors  
 
-Test the predict endpoint
+---
 
-Endpoint: POST /predict
+## 2. Frontend Testing (React)
 
-Example JSON payload:
+**Start the Frontend Locally**
+cd frontend  
+npm install  
+npm start  
 
-{
-  "industry": "Technology",
-  "country": "Kenya",
-  "company_age": 5,
-  "avg_size": 50,
-  "current_employees": 45,
-  "total_employees": 60,
-  "model_type": "Auto"
-}
+- Open browser at http://localhost:3000  
 
-Expected response: cluster, prediction, confidence, and model used
+**Test UI Components**
+- Check sliders, dropdowns, and input fields  
+- Confirm both Auto and Manual model selection work  
 
-Confirm API handles edge values (e.g., very small or very large numbers)
+**Run Predictions**
+- Fill in all inputs and click Run Prediction  
+- Observe:  
+  - Predicted cluster  
+  - Confidence value  
+  - Model used  
+  - History chart updates in real-time  
 
-Check debug info
+**Check Responsiveness**
+- Resize browser to mobile and tablet sizes  
+- Verify charts, sliders, and other UI elements adjust correctly  
 
-Verify request/response JSON shows correct mapping for input → output
+---
 
-Ensure there are no errors in console
+## 3. End-to-End Testing
 
-2. Frontend Testing (React)
-
-Start the frontend locally
-
-cd frontend
-npm install
-npm start
-
-Open browser at http://localhost:3000
-
-Test UI components
-
-Check sliders, dropdowns, and input fields
-
-Confirm auto and manual model selection work
-
-Run predictions
-
-Fill inputs and click Run Prediction
-
-Observe:
-
-Predicted cluster
-
-Confidence value
-
-Model used
-
-History chart updates
-
-Check responsiveness
-
-Resize browser to mobile and tablet sizes
-
-Verify charts and sliders adjust correctly
+- Input data in frontend → click Run Prediction → results appear  
+- Verify backend logs match frontend display  
+- Test edge cases (company age = 0 or 100+, total employees = 1 or 10000+)  
+- Confirm history chart updates after multiple predictions  
+- Ensure API latency < 1 second  
 
 ---
 
 ## Demonstration & Screenshots
+1. Introduction  
+   - Explain project purpose, features, and deployment links  
+
+2. Backend Demo  
+   - Show API running on Render  
+   - Test GET `/` and POST `/predict` using Postman  
+
+3. Frontend Demo  
+   - Open Netlify frontend  
+   - Fill inputs for a company and click Run Prediction  
+   - Highlight predicted cluster, confidence, and model used  
+
+4. Edge Case Example  
+   - Use extreme/unusual input values  
+   - Show how prediction and confidence behave  
+
+5. History Chart  
+   - Make multiple predictions and show chart updating  
+
+6. Debug Panel  
+   - Toggle debug info to show API request/response JSON  
+
+7. Conclusion  
+   - Summarize predictions, accuracy, and potential use cases  
+
+---
+
 - Prediction results: cluster, confidence, model  
 - History chart after multiple predictions  
 - Debug info JSON requests/responses  
