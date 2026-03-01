@@ -1,7 +1,7 @@
 // src/api.js
 
 // Make sure REACT_APP_API_URL is set in .env
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API_URL = process.env.REACT_APP_API_URL || "https://your-backend.onrender.com";
 
 // DEBUG: log the API URL being used
 console.log("Using API URL:", API_URL);
