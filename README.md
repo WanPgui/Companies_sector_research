@@ -212,7 +212,7 @@ npm start
 - Debug info JSON requests/responses  
 - Video demo (5 min) showing: flow, model selection, edge case handling, history chart  
 
-(Insert screenshots/video links here)  
+(link to related files: https://github.com/WanPgui/Companies_sector_research/tree/main/Files)  
 
 ---
 
