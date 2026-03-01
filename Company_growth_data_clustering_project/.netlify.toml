@@ -1,0 +1,27 @@
+# .netlify.toml
+[build]
+  # Directory where dependencies are installed and build runs
+  base = "Company_growth_data_clustering_project/frontend"
+
+  # Command to build the React app
+  command = "npm install && npm run build"
+
+  # Directory to publish after build
+  publish = "Company_growth_data_clustering_project/frontend/build"
+
+  # Directory for Netlify Functions (if any)
+  functions = "Company_growth_data_clustering_project/frontend/netlify/functions"
+
+# Set environment variables for React
+[context.production.environment]
+  REACT_APP_API_URL = "https://companies-sector-research.onrender.com"
+
+[context.deploy-preview.environment]
+  REACT_APP_API_URL = "https://companies-sector-research.onrender.com"
+
+[context.branch-deploy.environment]
+  REACT_APP_API_URL = "https://companies-sector-research.onrender.com"
+
+# Optional: caching to speed up builds
+[build.processing]
+  skip_processing = false
