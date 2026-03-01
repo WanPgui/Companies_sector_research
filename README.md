@@ -123,8 +123,7 @@ source venv/bin/activate   # Linux/Mac
 venv\Scripts\activate      # Windows  
 python app.py  
 
-- Ensure the console displays: API Running
-
+- Ensure the console displays: API Running or the local browser:http://localhost:5000 shows that "Backend is running!".
 **Check API Routes**
 - Open a browser or Postman  
 - Test GET `/` → should return: {"routes":["/predict","/template","/health"],"status":"API Running"}
